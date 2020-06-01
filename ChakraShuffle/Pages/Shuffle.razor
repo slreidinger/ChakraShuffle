@@ -1,6 +1,24 @@
 ﻿@page "/shuffle"
+
+@using ChakraShuffle.Data
+@inject SpotifyService  MusicService
 <h3>Shuffle</h3>
 
-@code {
+<div>
+    <ul>
+        @*in Model.playlists*@
 
+        @foreach (string playlist in new string[] { "playlist1", "playlist2" })
+        {
+            <li>@playlist</li>
+        }
+    </ul>
+</div>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        await MusicService.GetLibraryAsync();
+    }
 }

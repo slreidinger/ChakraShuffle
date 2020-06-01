@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ChakraShuffle.Data;
+using System.Configuration;
 
 namespace ChakraShuffle {
     public class Startup {
@@ -27,6 +28,7 @@ namespace ChakraShuffle {
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<SpotifyService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
